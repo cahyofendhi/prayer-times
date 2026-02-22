@@ -1,14 +1,12 @@
 # Prayer Times
 
-PWA web app for Islamic prayer times worldwide. Built with Flutter. Supports multiple countries; uses Indonesia Ministry of Religion method for Indonesia.
+PWA web app for Islamic prayer times in Indonesia. Built with Flutter and uses the Indonesian Ministry of Religion calculation method to provide accurate local prayer schedules.
 
 ## Features
 
 - **Prayer times** – Imsak, Fajr, Sunrise, Dhuhr, Asr, Maghrib, Isha
-- **Country selection** – Choose from many countries (Indonesia, Malaysia, Singapore, Saudi Arabia, UK, US, etc.)
 - **Location** – Current location (GPS) or select by country and city
-- **Indonesia** – Province and city picker with search (API Data Wilayah)
-- **Other countries** – Enter city name manually
+- **Indonesia** – Province and city picker with search
 - **Date** – Pick date with date picker
 - **Search** – Search in dialogs for country, province, or city
 - **PWA** – Installable on device
@@ -69,7 +67,7 @@ After the workflow finishes (a few minutes), the app will be available at:
 
 **`https://USERNAME.github.io/REPO-NAME/`**
 
-Example: repo `beedeveloper/Jadwal` → **https://beedeveloper.github.io/Jadwal/**
+Example: repo `cahyofendhi/prayer-times` → **https://cahyofendhi.github.io/prayer-times/**
 
 Share this link so anyone can open it in a browser (desktop and mobile).
 
@@ -82,25 +80,23 @@ Visitors can install the app from the browser (e.g. Chrome install icon in the a
 ## APIs
 
 - **Prayer times**: [Aladhan API](https://aladhan.com/prayer-times-api) (method 20 for Indonesia, method 2 for others)
-- **Indonesia provinces & cities**: [API Data Wilayah](https://api.datawilayah.com/)
+- **Indonesia provinces & cities**: [API Data Location](https://api.datawilayah.com/)
 
 ## Project structure
 
 ```
 lib/
 ├── main.dart
-├── data/
-│   └── countries.dart      # Country list
 ├── models/
 │   ├── prayer_time.dart
-│   └── wilayah.dart
+│   └── location.dart
 ├── providers/
-│   └── jadwal_provider.dart
+│   └── schedule_provider.dart
 ├── screens/
 │   └── home_screen.dart
 └── services/
     ├── prayer_api_service.dart
-    └── wilayah_api_service.dart
+    └── location_api_service.dart
 ```
 
 ## Requirements
