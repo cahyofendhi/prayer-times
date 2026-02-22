@@ -2,6 +2,8 @@
 
 PWA web app for Islamic prayer times in Indonesia. Built with Flutter and uses the Indonesian Ministry of Religion calculation method to provide accurate local prayer schedules.
 
+result: `Prayer Times` → **https://cahyofendhi.github.io/prayer-times/**
+
 ## Features
 
 - **Prayer times** – Imsak, Fajr, Sunrise, Dhuhr, Asr, Maghrib, Isha
