@@ -1,5 +1,5 @@
-# Build Flutter web dan deploy ke GitHub Pages
-# Setelah push, aktifkan GitHub Pages: Settings → Pages → Source: GitHub Actions
+# Build Flutter web and deploy to GitHub Pages
+# After pushing, enable GitHub Pages: Settings → Pages → Source: GitHub Actions
 
 name: Deploy to GitHub Pages
 
@@ -14,12 +14,13 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -27,9 +28,14 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.24.0'
-          channel: 'stable'
+          channel: stable
           cache: true
+
+      - name: Flutter version
+        run: flutter --version
+
+      - name: Disable analytics
+        run: flutter config --no-analytics
 
       - name: Install dependencies
         run: flutter pub get
@@ -46,11 +52,12 @@ jobs:
           path: build/web
 
   deploy:
+    needs: build
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
+
     steps:
       - name: Deploy to GitHub Pages
         id: deployment

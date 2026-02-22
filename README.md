@@ -27,6 +27,15 @@ flutter build web
 
 Output in `build/web`. Deploy to any static hosting (Vercel, Netlify, GitHub Pages, etc.).
 
+## 🚀 Getting Started (Run locally)
+
+### Clone or fork the repository
+
+```bash
+git clone https://github.com/cahyofendhi/prayer-times
+cd REPO-NAME
+```
+
 ---
 
 ## Deploy so everyone can access it (GitHub Pages)
@@ -54,7 +63,7 @@ Replace `USERNAME` and `REPO-NAME` with your GitHub username and repo name.
 
 ### 3. Automatic deploy
 
-Every push to `main` (or `master`) will:
+Every push to `main` or `master` will:
 
 - Build the Flutter web app
 - Deploy to GitHub Pages
